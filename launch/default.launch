@@ -1,0 +1,15 @@
+<launch>
+	<arg name="config" default="$(find loitor_stereo_visensor)/Loitor_VISensor_Setups.txt"/>
+	<arg name="left_cam_url" default="package://loitor_stereo_visensor/cfg/left.yaml"/>
+	<arg name="right_cam_url" default="package://loitor_stereo_visensor/cfg/right.yaml"/>
+	<arg name="left_cam_name" default="narrow_stereo/left"/>
+	<arg name="right_cam_name" default="narrow_stereo/right"/>
+
+	<node name="stereo_visensor" pkg="loitor_stereo_visensor" type="loitor_stereo_visensor">
+		<param name="config" value="$(arg config)"/>
+		<param name="left_cam_url" value="$(arg left_cam_url)"/>
+		<param name="right_cam_url" value="$(arg right_cam_url)"/>
+		<param name="left_cam_name" value="$(arg left_cam_name)"/>
+		<param name="right_cam_name" value="$(arg right_cam_name)"/>
+	</node>
+</launch>
